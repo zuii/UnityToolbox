@@ -63,6 +63,8 @@ namespace Toolbox
 
         void OnOptions()
         {
+            EditorGUILayout.Space();
+
             EditorGUILayout.BeginHorizontal();
             {
                 // ignore case
