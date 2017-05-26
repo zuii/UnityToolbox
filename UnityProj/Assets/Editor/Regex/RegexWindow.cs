@@ -51,7 +51,17 @@ namespace Toolbox
         {
             EditorGUILayout.Space();
             EditorGUILayout.LabelField("TEST STRING");
-            _testString = EditorGUILayout.TextArea(_testString, GUILayout.Height(100));
+            string test = EditorGUILayout.TextArea(_testString, GUILayout.Height(100));
+            if (!string.IsNullOrEmpty(test) && !test.Equals(_testString))
+            {
+                _testString = test;
+                Do();
+            }
+            else if (string.IsNullOrEmpty(test))
+            {
+                _testString = "";
+                _resultString = "";
+            }
         }
 
         void OnResultArea()
