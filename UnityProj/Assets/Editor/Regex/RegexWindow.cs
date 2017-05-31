@@ -114,7 +114,8 @@ namespace Toolbox
 
         void Do()
         {
-            if (string.IsNullOrEmpty(_testString))
+            if (string.IsNullOrEmpty(_testString)
+                || string.IsNullOrEmpty(_expression))
             {
                 return;
             }
