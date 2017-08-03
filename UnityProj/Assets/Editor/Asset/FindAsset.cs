@@ -52,7 +52,7 @@ public class FindAsset : EditorWindow
         EditorGUILayout.BeginHorizontal();
         {
             // label
-            EditorGUILayout.LabelField("Keyword：", GUILayout.Width(60));
+            EditorGUILayout.LabelField("Keyword:", GUILayout.Width(60));
 
             // input
             _keyword = EditorGUILayout.TextField(_keyword);
@@ -80,7 +80,7 @@ public class FindAsset : EditorWindow
 
         EditorGUILayout.BeginVertical();
         {
-            EditorGUILayout.LabelField("Results：");
+            EditorGUILayout.LabelField("Results:");
 
             // results
             foreach (string asset in _results)
@@ -138,7 +138,6 @@ public class FindAsset : EditorWindow
             if (md5.Equals(hash, StringComparison.OrdinalIgnoreCase))
             {
                 results.Add(asset.Substring(Application.dataPath.Length - "Assets".Length).Replace("\\", "/"));
-                break;
             }
 
             EditorUtility.DisplayProgressBar("Searching", string.Format("Checking：{0}", Path.GetFileName(asset)), (float)current++ / total);
